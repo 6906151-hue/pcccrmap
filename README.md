@@ -1,4 +1,4 @@
-made by pcshscr student m.4/3
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
@@ -34,7 +34,18 @@ made by pcshscr student m.4/3
 
     header p {
       color: #64748b;
-      margin: 0;
+      margin: 4px 0;
+    }
+
+    .credit-badge {
+      display: inline-block;
+      margin-top: 6px;
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+      font-weight: bold;
+      font-size: 13px;
+      padding: 4px 12px;
+      border-radius: 20px;
     }
 
     /* Search & Top Action Bar */
@@ -125,6 +136,7 @@ made by pcshscr student m.4/3
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       margin-bottom: 30px;
       display: none;
+      scroll-margin-top: 20px;
     }
 
     .room-header {
@@ -212,6 +224,111 @@ made by pcshscr student m.4/3
       flex: 1;
     }
 
+    /* Registered rooms list tags */
+    .room-tags {
+      margin-top: 15px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .room-tag {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .room-tag:hover {
+      background: #c7d2fe;
+    }
+
+    /* All Rooms Section (ช่องแสดงห้องทั้งหมดด้านล่าง) */
+    .all-rooms-section {
+      margin-top: 40px;
+      border-top: 2px solid #e2e8f0;
+      padding-top: 25px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .all-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .room-item-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 2px solid #e2e8f0;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .room-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+      border-color: #2563eb;
+    }
+
+    .room-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .room-item-id {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .room-item-name {
+      font-weight: bold;
+      color: #334155;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .room-item-desc {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 15px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px 0;
+      color: #64748b;
+      font-size: 14px;
+      border-top: 1px solid #e2e8f0;
+    }
+
     /* Modal Form for Adding Room */
     .modal {
       display: none;
@@ -288,38 +405,16 @@ made by pcshscr student m.4/3
       border-radius: 8px;
       border: 1px dashed #cbd5e1;
     }
-
-    /* Registered rooms list tags */
-    .room-tags {
-      margin-top: 15px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .room-tag {
-      background: #e0e7ff;
-      color: #3730a3;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .room-tag:hover {
-      background: #c7d2fe;
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <header>
-      <h1>📍 ค้นหาและนำทางห้องเรียน PCSHSCR </h1>
-      <p>พิมพ์เลขห้องเพื่อดูข้อมูลรายละเอียดและเส้นทางเดินไปห้อง</p>
+      <h1>📍 ค้นหาและนำทางห้องเรียน PCSHSCR</h1>
+      <p>พิมพ์เลขห้อง หรือเลือกห้องด้านล่างเพื่อดูรายละเอียดและเส้นทางเดินไปห้อง</p>
       <p>CHIANG RAI District</p>
+      <span class="credit-badge">Made by PCSHSCR student M.4/3</span>
     </header>
 
     <div class="action-bar">
@@ -331,7 +426,7 @@ made by pcshscr student m.4/3
     </div>
 
     <div class="room-tags">
-      <small style="color:#64748b; font-weight:bold;">ห้องที่มีในระบบ:</small>
+      <small style="color:#64748b; font-weight:bold;">ค้นหารวดเร็ว:</small>
       <div id="roomTagList"></div>
     </div>
 
@@ -356,6 +451,16 @@ made by pcshscr student m.4/3
 
       <div id="stepsGrid" class="steps-grid"></div>
     </div>
+
+    <!-- โซนรายการห้องทั้งหมดด้านล่าง -->
+    <div class="all-rooms-section">
+      <h2 class="section-title">🏢 รายการห้องทั้งหมดในระบบ (คลิกเพื่อดูเส้นทาง)</h2>
+      <div id="allRoomsGrid" class="all-rooms-grid"></div>
+    </div>
+
+    <footer>
+      <p>© PCSHSCR Room Navigation System | Made by PCSHSCR student M.4/3</p>
+    </footer>
   </div>
 
   <div id="addModal" class="modal">
@@ -450,6 +555,14 @@ made by pcshscr student m.4/3
     function saveRoomsData(data) {
       localStorage.setItem('school_rooms_data', JSON.stringify(data));
       renderRoomTags();
+      renderAllRoomCards();
+    }
+
+    // เลือกห้องจากการคลิกการ์ดห้อง
+    function selectRoom(id) {
+      document.getElementById('searchInput').value = id;
+      searchRoom();
+      document.getElementById('roomCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     // ค้นหาห้อง
@@ -459,7 +572,7 @@ made by pcshscr student m.4/3
       const roomCard = document.getElementById('roomCard');
 
       if (!query) {
-        statusMsg.textContent = 'กรุณากรอกเลขห้องหรือชื่อห้องที่ต้องการค้นหา';
+        statusMsg.textContent = 'กรุณากรอกเลขห้องหรือเลือกห้องจากรายการด้านล่าง';
         roomCard.style.display = 'none';
         return;
       }
@@ -509,11 +622,35 @@ made by pcshscr student m.4/3
         const tag = document.createElement('span');
         tag.className = 'room-tag';
         tag.textContent = `ห้อง ${r.id}`;
-        tag.onclick = () => {
-          document.getElementById('searchInput').value = r.id;
-          searchRoom();
-        };
+        tag.onclick = () => selectRoom(r.id);
         tagList.appendChild(tag);
+      });
+    }
+
+    // สร้างการ์ดห้องทั้งหมดแสดงด้านล่าง
+    function renderAllRoomCards() {
+      const grid = document.getElementById('allRoomsGrid');
+      const rooms = getRoomsData();
+      grid.innerHTML = '';
+
+      rooms.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'room-item-card';
+        card.onclick = () => selectRoom(r.id);
+        card.innerHTML = `
+          <div>
+            <div class="room-item-header">
+              <div class="room-item-id">ห้อง ${r.id}</div>
+              <span class="room-badge">${r.location}</span>
+            </div>
+            <div class="room-item-name">${r.name}</div>
+            <div class="room-item-desc">${r.description}</div>
+          </div>
+          <button class="btn btn-primary" style="width: 100%; padding: 8px 12px; font-size: 14px; margin-top: 10px;">
+            📍 ดูเส้นทางไปห้องนี้
+          </button>
+        `;
+        grid.appendChild(card);
       });
     }
 
@@ -565,7 +702,6 @@ made by pcshscr student m.4/3
       };
 
       const rooms = getRoomsData();
-      // ถ้ามีห้องนี้แล้วให้เขียนทับ
       const existingIdx = rooms.findIndex(r => r.id === id);
       if (existingIdx >= 0) {
         rooms[existingIdx] = newRoom;
@@ -575,10 +711,7 @@ made by pcshscr student m.4/3
 
       saveRoomsData(rooms);
       closeAddModal();
-
-      // ค้นหาห้องที่เพิ่งเพิ่มทันที
-      document.getElementById('searchInput').value = id;
-      searchRoom();
+      selectRoom(id);
     }
 
     // รองรับกดปุ่ม Enter ในช่องค้นหา
@@ -588,8 +721,9 @@ made by pcshscr student m.4/3
       }
     });
 
-    // เริ่มต้นแสดงผล Tag เมื่อเปิดหน้าเว็บ
+    // เริ่มต้นแสดงผลระบบเมื่อเปิดหน้าเว็บ
     renderRoomTags();
+    renderAllRoomCards();
   </script>
 </body>
 </html>
