@@ -53,17 +53,15 @@
       display: flex;
       gap: 12px;
       margin-bottom: 25px;
-      flex-wrap: wrap;
     }
 
     .search-box {
       flex: 1;
       display: flex;
       gap: 8px;
-      min-width: 280px;
     }
 
-    input[type="text"], textarea, select {
+    input[type="text"] {
       padding: 12px 16px;
       border: 2px solid #cbd5e1;
       border-radius: 8px;
@@ -72,7 +70,7 @@
       transition: border-color 0.2s;
     }
 
-    input[type="text"]:focus, textarea:focus {
+    input[type="text"]:focus {
       border-color: #2563eb;
     }
 
@@ -101,22 +99,6 @@
 
     .btn-primary:hover {
       background-color: #1d4ed8;
-    }
-
-    .btn-success {
-      background-color: #059669;
-    }
-
-    .btn-success:hover {
-      background-color: #047857;
-    }
-
-    .btn-secondary {
-      background-color: #64748b;
-    }
-
-    .btn-secondary:hover {
-      background-color: #475569;
     }
 
     /* Status & Alerts */
@@ -247,7 +229,7 @@
       background: #c7d2fe;
     }
 
-    /* All Rooms Section (ช่องแสดงห้องทั้งหมดด้านล่าง) */
+    /* All Rooms Section */
     .all-rooms-section {
       margin-top: 40px;
       border-top: 2px solid #e2e8f0;
@@ -328,83 +310,6 @@
       font-size: 14px;
       border-top: 1px solid #e2e8f0;
     }
-
-    /* Modal Form for Adding Room */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 15px;
-    }
-
-    .modal-content {
-      background: white;
-      width: 100%;
-      max-width: 650px;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      color: #1e3a8a;
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: #64748b;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 6px;
-      color: #334155;
-    }
-
-    .form-group input, .form-group textarea {
-      width: 100%;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .form-row .form-group {
-      flex: 1;
-    }
-
-    .image-inputs {
-      background-color: #f8fafc;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px dashed #cbd5e1;
-    }
   </style>
 </head>
 <body>
@@ -422,7 +327,6 @@
         <input type="text" id="searchInput" placeholder="กรอกเลขห้องหรือชื่อห้อง (เช่น 321, 101, ห้องคอม)...">
         <button class="btn btn-primary" onclick="searchRoom()">ค้นหา</button>
       </div>
-      <button class="btn btn-success" onclick="openAddModal()">+ เพิ่มห้องใหม่</button>
     </div>
 
     <div class="room-tags">
@@ -463,55 +367,8 @@
     </footer>
   </div>
 
-  <div id="addModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>➕ เพิ่มข้อมูลห้องเรียนใหม่</h2>
-        <button class="close-btn" onclick="closeAddModal()">&times;</button>
-      </div>
-
-      <form id="addRoomForm" onsubmit="saveNewRoom(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>เลขห้อง / รหัสห้อง *</label>
-            <input type="text" id="newRoomId" placeholder="เช่น 405" required>
-          </div>
-          <div class="form-group">
-            <label>ชื่อห้อง / ตำแหน่งชั้น *</label>
-            <input type="text" id="newRoomName" placeholder="เช่น อาคาร 4 ชั้น 3" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>รายละเอียดเกี่ยวกับห้อง *</label>
-          <textarea id="newRoomDesc" rows="3" placeholder="เช่น เป็นห้องปฏิบัติการเคมี มีอุปกรณ์ทดลองครบครัน..." required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label>📷 URL รูปภาพทางไปห้อง (5 รูปภาพ) *</label>
-          <div class="image-inputs">
-            <small style="color:#64748b; display:block; margin-bottom:10px;">กรอก URL รูปภาพ หรือปล่อยว่างไว้เพื่อใช้รูปตัวอย่างนำทาง</small>
-            
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <input type="text" id="img1" placeholder="รูปที่ 1: จุดเริ่มต้น (เช่น หน้าเสาธง/อาคาร)">
-              <input type="text" id="img2" placeholder="รูปที่ 2: ทางเลี้ยว / บันได">
-              <input type="text" id="img3" placeholder="รูปที่ 3: ระหว่างทางเดิน / ชั้น">
-              <input type="text" id="img4" placeholder="รูปที่ 4: หน้าโถง / ทางเดินก่อนถึง">
-              <input type="text" id="img5" placeholder="รูปที่ 5: ถึงประตูหน้าห้องเป้าหมาย">
-            </div>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-          <button type="button" class="btn btn-secondary" onclick="closeAddModal()">ยกเลิก</button>
-          <button type="submit" class="btn btn-success">บันทึกข้อมูลห้อง</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <script>
-    // 1. ข้อมูลห้องเริ่มต้น (Mock Data)
+    // 1. ข้อมูลห้องเริ่มต้นในระบบ
     const initialRooms = [
       {
         id: "321",
@@ -541,21 +398,8 @@
       }
     ];
 
-    // โหลดข้อมูลจาก LocalStorage หรือใช้ข้อมูลเริ่มต้น
     function getRoomsData() {
-      const stored = localStorage.getItem('school_rooms_data');
-      if (stored) {
-        return JSON.parse(stored);
-      }
-      localStorage.setItem('school_rooms_data', JSON.stringify(initialRooms));
       return initialRooms;
-    }
-
-    // บันทึกข้อมูลห้องกลับลง LocalStorage
-    function saveRoomsData(data) {
-      localStorage.setItem('school_rooms_data', JSON.stringify(data));
-      renderRoomTags();
-      renderAllRoomCards();
     }
 
     // เลือกห้องจากการคลิกการ์ดห้อง
@@ -585,7 +429,7 @@
       );
 
       if (!found) {
-        statusMsg.textContent = `❌ ไม่พบข้อมูลห้อง "${query}" ในระบบ กรุณาตรวจสอบเลขห้องหรือกดปุ่ม +เพิ่มห้องใหม่`;
+        statusMsg.textContent = `❌ ไม่พบข้อมูลห้อง "${query}" ในระบบ กรุณาตรวจสอบเลขห้องอีกครั้ง`;
         roomCard.style.display = 'none';
         return;
       }
@@ -652,66 +496,6 @@
         `;
         grid.appendChild(card);
       });
-    }
-
-    // เปิด/ปิด Modal เพิ่มห้อง
-    function openAddModal() {
-      document.getElementById('addModal').style.display = 'flex';
-    }
-
-    function closeAddModal() {
-      document.getElementById('addModal').style.display = 'none';
-      document.getElementById('addRoomForm').reset();
-    }
-
-    // บันทึกห้องใหม่
-    function saveNewRoom(e) {
-      e.preventDefault();
-      
-      const id = document.getElementById('newRoomId').value.trim();
-      const location = document.getElementById('newRoomName').value.trim();
-      const description = document.getElementById('newRoomDesc').value.trim();
-
-      const imgInputs = [
-        document.getElementById('img1').value.trim(),
-        document.getElementById('img2').value.trim(),
-        document.getElementById('img3').value.trim(),
-        document.getElementById('img4').value.trim(),
-        document.getElementById('img5').value.trim()
-      ];
-
-      const stepNames = [
-        "1. จุดเริ่มต้นทางเดิน",
-        "2. จุดสังเกตแรก/จุดเลี้ยว",
-        "3. ระหว่างทางเดิน/โถงบันได",
-        "4. บริเวณใกล้เคียงห้อง",
-        "5. หน้าประตูห้องเป้าหมาย"
-      ];
-
-      const images = imgInputs.map((url, i) => ({
-        url: url || `https://picsum.photos/seed/newroom_${id}_step${i+1}/600/400`,
-        desc: `${stepNames[i]}`
-      }));
-
-      const newRoom = {
-        id,
-        location,
-        name: `ห้องเรียน ${id}`,
-        description,
-        images
-      };
-
-      const rooms = getRoomsData();
-      const existingIdx = rooms.findIndex(r => r.id === id);
-      if (existingIdx >= 0) {
-        rooms[existingIdx] = newRoom;
-      } else {
-        rooms.push(newRoom);
-      }
-
-      saveRoomsData(rooms);
-      closeAddModal();
-      selectRoom(id);
     }
 
     // รองรับกดปุ่ม Enter ในช่องค้นหา
