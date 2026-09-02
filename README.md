@@ -143,10 +143,10 @@ made by pcshscr
 <body>
 
   <div class="container">
-    <h1>ค้นหาคำศัพท์ & รูปภาพประกอบ</h1>
+    <h1>ค้นหาห้องเรียนสำหรับ PCSHSCR</h1>
     
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="พิมพ์คำศัพท์ภาษาอังกฤษ (เช่น cat, car, guitar)...">
+      <input type="text" id="searchInput" placeholder="พิมพ์ค้นหาห้องในPCSHSCR">
       <button onclick="searchWord()">ค้นหา</button>
     </div>
 
