@@ -146,6 +146,24 @@
       font-size: 14px;
     }
 
+    /* Large Hero Image for Room */
+    .room-main-img-container {
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background-color: #e2e8f0;
+    }
+
+    .room-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .room-desc {
       background-color: #f8fafc;
       border-left: 4px solid #2563eb;
@@ -344,6 +362,11 @@
         </div>
       </div>
 
+      <!-- รูปภาพใหญ่ของห้องเรียน เหนือรายละเอียด -->
+      <div class="room-main-img-container">
+        <img id="roomMainImg" class="room-main-img" src="" alt="รูปห้องเรียน" onerror="this.src='https://via.placeholder.com/800x400?text=PCSHSCR+Room'">
+      </div>
+
       <div>
         <strong>📋 รายละเอียดเกี่ยวกับห้อง:</strong>
         <div id="roomDesc" class="room-desc"></div>
@@ -368,7 +391,7 @@
   </div>
 
   <script>
-    // 1. ข้อมูลห้องเริ่มต้นในระบบ
+    // ข้อมูลห้องเริ่มต้นในระบบ
     const initialRooms = [
       {
         id: "321",
@@ -439,6 +462,10 @@
       document.getElementById('roomTitle').textContent = `ห้อง ${found.id} - ${found.name}`;
       document.getElementById('roomLocation').textContent = found.location;
       document.getElementById('roomDesc').textContent = found.description;
+      
+      // ตั้งค่ารูปภาพใหญ่ (ดึงรูปขั้นตอนสุดท้าย ซึ่งเป็นรูปหน้าห้องเป้าหมายมาโชว์)
+      const mainImgUrl = found.images[found.images.length - 1]?.url || found.images[0]?.url;
+      document.getElementById('roomMainImg').src = mainImgUrl;
 
       const stepsGrid = document.getElementById('stepsGrid');
       stepsGrid.innerHTML = '';
