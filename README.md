@@ -461,19 +461,19 @@
       </div>
 
       <div>
-        <strong style="color:#1e293b; font-size: 15px;">📋 รายละเอียดเกี่ยวกับห้อง:</strong>
+        <strong style="color:#1e293b; font-size: 15px;"> รายละเอียดเกี่ยวกับห้อง:</strong>
         <div id="roomDesc" class="room-desc"></div>
       </div>
 
       <div class="steps-title">
-        🗺️ รูปภาพเส้นทางนำทางไปห้อง (5 ขั้นตอน):
+         รูปภาพเส้นทางนำทางไปห้อง (5 ขั้นตอน):
       </div>
 
       <div id="stepsGrid" class="steps-grid"></div>
     </div>
 
     <div class="all-rooms-section">
-      <h2 class="section-title">🏢 รายการห้องทั้งหมดในระบบ (คลิกเพื่อดูเส้นทาง)</h2>
+      <h2 class="section-title"> รายการห้องทั้งหมดในระบบ (คลิกเพื่อดูเส้นทาง)</h2>
       <div id="allRoomsGrid" class="all-rooms-grid"></div>
     </div>
 
@@ -510,6 +510,20 @@
           { url: "https://picsum.photos/seed/step3_101/600/400", desc: "3. เลี้ยวขวาตรงป้ายจุดบริการนักเรียน" },
           { url: "https://picsum.photos/seed/step4_101/600/400", desc: "4. เดินตามระเบียงทางเดินริมสวน" },
           { url: "https://picsum.photos/seed/step5_101/600/400", desc: "5. ถึงห้อง 101 ประตูกระจกบานเลื่อนสีเขียว" }
+        ]
+      },
+      {
+        id: "หอประชุมแคแสด",
+        location: "หอประชุมแคแสด",
+        name: "หอประชุมแคแสด",
+        description: "ห้องประชุมขนาดใหญ่รองรับนักเรียนจุฬาภรณ์ราชวิทยาลัยเชียงราย ใช้ในการจัดงาน และกิจกรรมภายในโรงเรียน",
+        mainImage: "https://ibb.co/YF5pcZh3",
+        images: [
+          { url: "https://ibb.co/YBwhdmTZ", desc: "1. เริ่มจากหน้าตึกอำนวยการ" },
+          { url: "https://ibb.co/zTWhFHqm", desc: "2. เดินผ่านริมน้ำ" },
+          { url: "https://ibb.co/q3Z58bbq", desc: "3. เลี้ยวซ้ายบริเวณ 3 แยกริมน้ำ" },
+          { url: "https://ibb.co/dwf0RRrG", desc: "4. เดินผ่านสะพาน" },
+          { url: "https://ibb.co/xq47J07S", desc: "5. ถึงหอประชุมแคแสด จุดหมายอยู่บริเวณด้านหน้า" }
         ]
       }
     ];
