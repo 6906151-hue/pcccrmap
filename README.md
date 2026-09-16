@@ -1,4 +1,3 @@
-
 <html lang="th">
 <head>
   <meta charset="UTF-8">
@@ -364,7 +363,7 @@
 
       <!-- รูปภาพใหญ่ของห้องเรียน เหนือรายละเอียด -->
       <div class="room-main-img-container">
-        <img id="roomMainImg" class="room-main-img" src="" alt="รูปห้องเรียน" onerror="this.src='https://via.placeholder.com/800x400?text=PCSHSCR+Room'">
+        <img id="roomMainImg" class="room-main-img" src="https://i.postimg.cc/Bn9kCGjs/IMG20260913154210-(1).jpg" alt="รูปห้องเรียน" onerror="this.src='https://via.placeholder.com/800x400?text=PCSHSCR+Room'">
       </div>
 
       <div>
@@ -398,6 +397,8 @@
         location: "อาคาร 3 ชั้น 2",
         name: "ห้องปฏิบัติการคอมพิวเตอร์ 1",
         description: "ห้องปฏิบัติการคอมพิวเตอร์สำหรับการเรียนการสอนวิชาออกแบบและเทคโนโลยี และโปรแกรมมิ่ง มีเครื่องคอมพิวเตอร์ 40 เครื่อง พร้อมระบบปรับอากาศและเครื่องโปรเจกเตอร์",
+        // ระบุลิงก์รูปใหญ่สำหรับห้อง 321 ตรงนี้
+        mainImage: "https://i.postimg.cc/Bn9kCGjs/IMG20260913154210-(1).jpg",
         images: [
           { url: "https://i.postimg.cc/Bn9kCGjs/IMG20260913154210-(1).jpg", desc: "1. เริ่มต้นจากซุ้มประตูหน้าโรงเรียน เดินตรงเข้าสู่ลานกิจกรรมกลาง" },
           { url: "https://picsum.photos/seed/step2_321/600/400", desc: "2. เดินตรงไปทางอาคาร 3 (สังเกตป้ายสีฟ้าหน้าอาคาร)" },
@@ -411,6 +412,8 @@
         location: "อาคาร 1 ชั้น 1",
         name: "ห้องแนะแนวและห้องพยาบาล",
         description: "ห้องสำหรับการปรึกษาด้านการเรียน สุขภาพจิต และเป็นจุดปฐมพยาบาลเบื้องต้น มีเตียงพักฟื้น 4 เตียงและยาพื้นฐานครบครัน",
+        // ระบุลิงก์รูปใหญ่สำหรับห้อง 101 ตรงนี้
+        mainImage: "https://picsum.photos/seed/step5_101/600/400",
         images: [
           { url: "https://picsum.photos/seed/step1_101/600/400", desc: "1. เริ่มจากจุดประชาสัมพันธ์หน้าอาคาร 1" },
           { url: "https://picsum.photos/seed/step2_101/600/400", desc: "2. เดินตรงเข้าโถงอาคาร 1" },
@@ -463,8 +466,8 @@
       document.getElementById('roomLocation').textContent = found.location;
       document.getElementById('roomDesc').textContent = found.description;
       
-      // ตั้งค่ารูปภาพใหญ่ (ดึงรูปขั้นตอนสุดท้าย ซึ่งเป็นรูปหน้าห้องเป้าหมายมาโชว์)
-      const mainImgUrl = found.images[found.images.length - 1]?.url || found.images[0]?.url;
+      // ดึงรูปใหญ่จาก mainImage ถ้าไม่มีจะดึงจากรูปขั้นตอนแรก/สุดท้าย
+      const mainImgUrl = found.mainImage || found.images[found.images.length - 1]?.url || found.images[0]?.url;
       document.getElementById('roomMainImg').src = mainImgUrl;
 
       const stepsGrid = document.getElementById('stepsGrid');
