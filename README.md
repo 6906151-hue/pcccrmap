@@ -517,11 +517,11 @@
         location: "หอประชุมแคแสด",
         name: "หอประชุมแคแสด",
         description: "ห้องประชุมขนาดใหญ่รองรับนักเรียนจุฬาภรณ์ราชวิทยาลัยเชียงราย ใช้ในการจัดงาน และกิจกรรมภายในโรงเรียน",
-        mainImage: "https://ibb.co/YF5pcZh3",
+        mainImage: "https://i.ibb.co/ksLQ41Xx/IMG20260913152541.jpg",
         images: [
-          { url: "https://ibb.co/YBwhdmTZ", desc: "1. เริ่มจากหน้าตึกอำนวยการ" },
-          { url: "https://ibb.co/zTWhFHqm", desc: "2. เดินผ่านริมน้ำ" },
-          { url: "https://ibb.co/q3Z58bbq", desc: "3. เลี้ยวซ้ายบริเวณ 3 แยกริมน้ำ" },
+          { url: "https://i.ibb.co/k2vXDj61/IMG20260913142004.jpg", desc: "1. เริ่มจากหน้าตึกอำนวยการ" },
+          { url: "https://i.ibb.co/ksVgJ6NG/IMG20260913142426.jpg", desc: "2. เดินผ่านริมน้ำ" },
+          { url: "https://i.ibb.co/PvSQyBBX/IMG20260913152336.jpg", desc: "3. เลี้ยวซ้ายบริเวณ 3 แยกริมน้ำ" },
           { url: "https://i.ibb.co/Zpf600VW/IMG20260913152354.jpg", desc: "4. เดินผ่านสะพาน" },
           { url: "https://i.ibb.co/7t91251J/IMG20260913152556-1.jpg", desc: "5. ถึงหอประชุมแคแสด จุดหมายอยู่บริเวณด้านหน้า" }
         ]
