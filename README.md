@@ -522,8 +522,8 @@
           { url: "https://ibb.co/YBwhdmTZ", desc: "1. เริ่มจากหน้าตึกอำนวยการ" },
           { url: "https://ibb.co/zTWhFHqm", desc: "2. เดินผ่านริมน้ำ" },
           { url: "https://ibb.co/q3Z58bbq", desc: "3. เลี้ยวซ้ายบริเวณ 3 แยกริมน้ำ" },
-          { url: "https://ibb.co/dwf0RRrG", desc: "4. เดินผ่านสะพาน" },
-          { url: "https://ibb.co/xq47J07S", desc: "5. ถึงหอประชุมแคแสด จุดหมายอยู่บริเวณด้านหน้า" }
+          { url: "https://i.ibb.co/Zpf600VW/IMG20260913152354.jpg", desc: "4. เดินผ่านสะพาน" },
+          { url: "https://i.ibb.co/7t91251J/IMG20260913152556-1.jpg", desc: "5. ถึงหอประชุมแคแสด จุดหมายอยู่บริเวณด้านหน้า" }
         ]
       }
     ];
