@@ -11,17 +11,17 @@
     }
 
     body {
-      background: #0f172a;
+      background-color: #f1f5f9;
       min-height: 100vh;
       margin: 0;
       padding: 30px 20px;
-      color: #0f172a;
-      overflow-x: hidden;
+      color: #1e293b;
       position: relative;
+      overflow-x: hidden;
     }
 
-    /* Ambient Liquid Background Blobs */
-    .bg-blobs {
+    /* Soft Liquid Ambient Background */
+    .liquid-bg {
       position: fixed;
       top: 0;
       left: 0;
@@ -29,240 +29,209 @@
       height: 100%;
       z-index: -1;
       overflow: hidden;
-      pointer-events: none;
     }
 
-    .blob {
+    .liquid-blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.65;
-      animation: float 14s infinite alternate ease-in-out;
+      filter: blur(100px);
+      opacity: 0.45;
+      animation: floatSmooth 18s ease-in-out infinite alternate;
     }
 
     .blob-1 {
       top: -10%;
-      left: -10%;
-      width: 550px;
-      height: 550px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      right: 10%;
+      width: 450px;
+      height: 450px;
+      background: #c7d2fe;
     }
 
     .blob-2 {
-      bottom: -15%;
-      right: -10%;
-      width: 650px;
-      height: 650px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      animation-delay: -5s;
+      bottom: -10%;
+      left: 5%;
+      width: 500px;
+      height: 500px;
+      background: #bae6fd;
+      animation-delay: -6s;
     }
 
     .blob-3 {
       top: 40%;
-      left: 35%;
-      width: 450px;
-      height: 450px;
-      background: linear-gradient(135deg, #ec4899, #8b5cf6);
-      animation-delay: -9s;
+      right: 30%;
+      width: 350px;
+      height: 350px;
+      background: #e0e7ff;
+      animation-delay: -12s;
     }
 
-    @keyframes float {
-      0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-      }
-      50% {
-        transform: translate(60px, 80px) scale(1.1) rotate(180deg);
-      }
-      100% {
-        transform: translate(-40px, 40px) scale(0.95) rotate(360deg);
-      }
+    @keyframes floatSmooth {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 40px) scale(1.05); }
+      100% { transform: translate(-30px, 20px) scale(0.95); }
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 960px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
-    /* Glass Container Helper */
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* Subtle Glassmorphism Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.12),
-                  inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
-      border-radius: 24px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05),
+                  0 2px 6px -1px rgba(0, 0, 0, 0.02);
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
-      padding: 25px;
+      margin-bottom: 25px;
+      padding: 24px;
     }
 
     header h1 {
-      color: #0f172a;
+      color: #1e3a8a;
       margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 32px;
-      letter-spacing: -0.5px;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+      margin-bottom: 8px;
+      font-size: 28px;
     }
 
     header p {
-      color: #334155;
-      margin: 6px 0;
-      font-weight: 500;
+      color: #64748b;
+      margin: 4px 0;
+      font-size: 15px;
     }
 
     .credit-badge {
       display: inline-block;
       margin-top: 10px;
-      background: rgba(99, 102, 241, 0.15);
+      background: rgba(224, 231, 255, 0.7);
       color: #3730a3;
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      backdrop-filter: blur(8px);
-      font-weight: bold;
+      font-weight: 600;
       font-size: 13px;
-      padding: 6px 16px;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(199, 210, 254, 0.5);
     }
 
     /* Search & Top Action Bar */
     .action-bar {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .search-box {
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
 
     input[type="text"] {
       flex: 1;
-      padding: 16px 22px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1.5px solid rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      font-size: 16px;
-      color: #0f172a;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      border-radius: 14px;
+      font-size: 15px;
+      color: #1e293b;
       outline: none;
-      backdrop-filter: blur(10px);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02),
-                  0 8px 20px rgba(0, 0, 0, 0.04);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    input[type="text"]::placeholder {
-      color: #64748b;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
     }
 
     input[type="text"]:focus {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: #6366f1;
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25),
-                  0 10px 25px rgba(0, 0, 0, 0.08);
-      transform: translateY(-1px);
+      background: #ffffff;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
     .btn {
-      padding: 16px 28px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
       color: white;
       border: none;
-      border-radius: 16px;
+      border-radius: 14px;
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
-      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background: #2563eb;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      background: #1d4ed8;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+      transform: translateY(-1px);
     }
 
     .btn:active {
-      transform: translateY(1px);
+      transform: translateY(0);
     }
 
-    /* Glass Registered rooms tags */
+    /* Quick Tags */
     .room-tags {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
       align-items: center;
-      padding: 12px 20px;
+      padding: 12px 18px;
       margin-bottom: 25px;
     }
 
     .room-tag {
-      background: rgba(255, 255, 255, 0.5);
-      color: #1e1b4b;
-      padding: 6px 14px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
+      background: rgba(255, 255, 255, 0.6);
+      color: #334155;
+      padding: 5px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(8px);
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.2s ease;
     }
 
     .room-tag:hover {
-      background: rgba(99, 102, 241, 0.2);
-      color: #4338ca;
-      border-color: rgba(99, 102, 241, 0.4);
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 6px 15px rgba(99, 102, 241, 0.15);
+      background: #ffffff;
+      color: #2563eb;
+      border-color: #93c5fd;
+      transform: translateY(-1px);
     }
 
     /* Status & Alerts */
     .status-msg {
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
       margin: 15px 0;
-      color: #ef4444;
-      font-weight: bold;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      color: #dc2626;
+      font-weight: 600;
     }
 
     /* Room Details Card */
     .room-card {
-      padding: 30px;
-      margin-bottom: 35px;
+      padding: 25px;
+      margin-bottom: 30px;
       display: none;
       scroll-margin-top: 20px;
-      animation: glassFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: fadeIn 0.4s ease-out;
     }
 
-    @keyframes glassFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .room-header {
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      padding-bottom: 18px;
-      margin-bottom: 22px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -271,32 +240,29 @@
     }
 
     .room-title {
-      font-size: 28px;
+      font-size: 24px;
       color: #0f172a;
       margin: 0;
-      font-weight: 800;
     }
 
     .room-badge {
-      background: rgba(59, 130, 246, 0.12);
+      background: #eff6ff;
       color: #2563eb;
-      border: 1px solid rgba(59, 130, 246, 0.25);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 14px;
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid #dbeafe;
     }
 
-    /* Hero Image */
     .room-main-img-container {
       width: 100%;
-      height: 400px;
-      border-radius: 20px;
+      height: 380px;
+      border-radius: 14px;
       overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      position: relative;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      background-color: #e2e8f0;
     }
 
     .room-main-img {
@@ -304,31 +270,25 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .room-main-img-container:hover .room-main-img {
-      transform: scale(1.02);
     }
 
     .room-desc {
-      background: rgba(255, 255, 255, 0.5);
-      border-left: 4px solid #6366f1;
-      padding: 18px 20px;
-      border-radius: 0 16px 16px 0;
-      font-size: 16px;
+      background: rgba(248, 250, 252, 0.8);
+      border-left: 3.5px solid #2563eb;
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 15px;
       line-height: 1.6;
-      margin-top: 8px;
-      margin-bottom: 30px;
+      margin-top: 6px;
+      margin-bottom: 25px;
       color: #334155;
     }
 
-    /* Steps Grid */
     .steps-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 18px;
+      color: #1e293b;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -336,117 +296,110 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
     }
 
     .step-card {
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-direction: column;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      transition: transform 0.2s ease;
     }
 
     .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      background: rgba(255, 255, 255, 0.75);
+      transform: translateY(-2px);
+      background: #ffffff;
     }
 
     .step-badge {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      background: #1e3a8a;
       color: white;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px;
       text-align: center;
-      letter-spacing: 0.5px;
     }
 
     .step-card img {
       width: 100%;
-      height: 130px;
+      height: 120px;
       object-fit: cover;
       background-color: #cbd5e1;
     }
 
     .step-card .step-text {
-      padding: 12px;
-      font-size: 13px;
-      color: #334155;
+      padding: 10px;
+      font-size: 12px;
+      color: #475569;
       line-height: 1.4;
       flex: 1;
-      font-weight: 500;
     }
 
     /* All Rooms Section */
     .all-rooms-section {
-      margin-top: 40px;
-      padding-top: 30px;
+      margin-top: 35px;
+      padding-top: 20px;
     }
 
     .section-title {
-      font-size: 22px;
-      color: #0f172a;
-      margin-bottom: 22px;
+      font-size: 20px;
+      color: #1e3a8a;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+      gap: 8px;
     }
 
     .all-rooms-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 16px;
     }
 
     .room-item-card {
-      padding: 22px;
+      padding: 20px;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .room-item-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(31, 38, 135, 0.18),
-                  0 0 20px rgba(99, 102, 241, 0.2);
-      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+      border-color: #93c5fd;
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .room-item-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .room-item-id {
-      font-size: 22px;
-      font-weight: 800;
-      color: #0f172a;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
     }
 
     .room-item-name {
-      font-weight: 700;
-      color: #1e293b;
-      font-size: 16px;
-      margin-bottom: 8px;
+      font-weight: 600;
+      color: #334155;
+      font-size: 15px;
+      margin-bottom: 6px;
     }
 
     .room-item-desc {
       font-size: 13px;
-      color: #475569;
-      margin-bottom: 18px;
+      color: #64748b;
+      margin-bottom: 14px;
       line-height: 1.5;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -457,25 +410,24 @@
     /* Footer */
     footer {
       text-align: center;
-      margin-top: 50px;
-      padding: 25px 0;
-      color: #f8fafc;
-      font-size: 14px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      margin-top: 40px;
+      padding: 20px 0;
+      color: #64748b;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Animated Liquid Background -->
-  <div class="bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+  <!-- Ambient Fluid Accent Background -->
+  <div class="liquid-bg">
+    <div class="liquid-blob blob-1"></div>
+    <div class="liquid-blob blob-2"></div>
+    <div class="liquid-blob blob-3"></div>
   </div>
 
   <div class="container">
-    <header class="glass-panel">
+    <header class="glass-card">
       <h1>📍 ค้นหาและนำทางห้องเรียน PCSHSCR</h1>
       <p>พิมพ์เลขห้อง หรือเลือกห้องด้านล่างเพื่อดูรายละเอียดและเส้นทางเดินไปห้อง</p>
       <p>CHIANG RAI District</p>
@@ -489,14 +441,14 @@
       </div>
     </div>
 
-    <div class="room-tags glass-panel">
-      <small style="color:#334155; font-weight:bold;">ค้นหารวดเร็ว:</small>
-      <div id="roomTagList" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
+    <div class="room-tags glass-card">
+      <small style="color:#64748b; font-weight:bold;">ค้นหารวดเร็ว:</small>
+      <div id="roomTagList" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
     </div>
 
     <div id="statusMsg" class="status-msg"></div>
 
-    <div id="roomCard" class="room-card glass-panel">
+    <div id="roomCard" class="room-card glass-card">
       <div class="room-header">
         <div>
           <h2 id="roomTitle" class="room-title"></h2>
@@ -504,13 +456,12 @@
         <span id="roomLocation" class="room-badge"></span>
       </div>
 
-      <!-- รูปภาพใหญ่ของห้องเรียน เหนือรายละเอียด -->
       <div class="room-main-img-container">
         <img id="roomMainImg" class="room-main-img" src="https://i.postimg.cc/Bn9kCGjs/IMG20260913154210-(1).jpg" alt="รูปห้องเรียน" onerror="this.src='https://via.placeholder.com/800x400?text=PCSHSCR+Room'">
       </div>
 
       <div>
-        <strong style="color: #0f172a; font-size: 16px;">📋 รายละเอียดเกี่ยวกับห้อง:</strong>
+        <strong style="color:#1e293b; font-size: 15px;">📋 รายละเอียดเกี่ยวกับห้อง:</strong>
         <div id="roomDesc" class="room-desc"></div>
       </div>
 
@@ -521,7 +472,6 @@
       <div id="stepsGrid" class="steps-grid"></div>
     </div>
 
-    <!-- โซนรายการห้องทั้งหมดด้านล่าง -->
     <div class="all-rooms-section">
       <h2 class="section-title">🏢 รายการห้องทั้งหมดในระบบ (คลิกเพื่อดูเส้นทาง)</h2>
       <div id="allRoomsGrid" class="all-rooms-grid"></div>
@@ -533,7 +483,6 @@
   </div>
 
   <script>
-    // ข้อมูลห้องเริ่มต้นในระบบ
     const initialRooms = [
       {
         id: "321",
@@ -569,14 +518,12 @@
       return initialRooms;
     }
 
-    // เลือกห้องจากการคลิกการ์ดห้อง
     function selectRoom(id) {
       document.getElementById('searchInput').value = id;
       searchRoom();
       document.getElementById('roomCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // ค้นหาห้อง
     function searchRoom() {
       const query = document.getElementById('searchInput').value.trim().toLowerCase();
       const statusMsg = document.getElementById('statusMsg');
@@ -601,7 +548,6 @@
         return;
       }
 
-      // แสดงผลเมื่อพบห้อง
       statusMsg.textContent = '';
       document.getElementById('roomTitle').textContent = `ห้อง ${found.id} - ${found.name}`;
       document.getElementById('roomLocation').textContent = found.location;
@@ -627,7 +573,6 @@
       roomCard.style.display = 'block';
     }
 
-    // สร้าง Tag ปุ่มกดค้นหาด่วน
     function renderRoomTags() {
       const tagList = document.getElementById('roomTagList');
       const rooms = getRoomsData();
@@ -641,7 +586,6 @@
       });
     }
 
-    // สร้างการ์ดห้องทั้งหมดแสดงด้านล่าง
     function renderAllRoomCards() {
       const grid = document.getElementById('allRoomsGrid');
       const rooms = getRoomsData();
@@ -649,7 +593,7 @@
 
       rooms.forEach(r => {
         const card = document.createElement('div');
-        card.className = 'room-item-card glass-panel';
+        card.className = 'room-item-card glass-card';
         card.onclick = () => selectRoom(r.id);
         card.innerHTML = `
           <div>
@@ -660,7 +604,7 @@
             <div class="room-item-name">${r.name}</div>
             <div class="room-item-desc">${r.description}</div>
           </div>
-          <button class="btn btn-primary" style="width: 100%; padding: 10px 14px; font-size: 14px; margin-top: 10px; border-radius: 12px;">
+          <button class="btn btn-primary" style="width: 100%; padding: 8px 12px; font-size: 13px; margin-top: 8px; border-radius: 10px;">
             📍 ดูเส้นทางไปห้องนี้
           </button>
         `;
@@ -668,14 +612,12 @@
       });
     }
 
-    // รองรับกดปุ่ม Enter ในช่องค้นหา
     document.getElementById('searchInput').addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
         searchRoom();
       }
     });
 
-    // เริ่มต้นแสดงผลระบบเมื่อเปิดหน้าเว็บ
     renderRoomTags();
     renderAllRoomCards();
   </script>
