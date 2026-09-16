@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
@@ -535,9 +534,9 @@
         images: [
           { url: "https://i.ibb.co/k2vXDj61/IMG20260913142004.jpg", desc: "1. เริ่มจากหน้าตึกอำนวยการ" },
           { url: "https://i.ibb.co/ksVgJ6NG/IMG20260913142426.jpg", desc: "2. เดินผ่านริมน้ำ" },
-          { url: "https://i.ibb.co/rRJFkkY1/IMG20260913160139.jpg", desc: "3. เลี้ยวซ้ายบริเวณ 3 แยกริมน้ำ" },
-          { url: "https://i.ibb.co/ynN7qxLH/IMG20260913160214-1.jpg", desc: "4. เดินผ่านสะพาน" },
-          { url: "https://i.ibb.co/VccZRVgk/IMG20260913160344-1.jpg", desc: "5. ถึงหอประชุมแคแสด จุดหมายอยู่บริเวณด้านหน้า" }
+          { url: "https://i.ibb.co/rRJFkkY1/IMG20260913160139.jpg", desc: "3. เลี้ยวขวาบริเวณ 3 แยกริมน้ำ" },
+          { url: "https://i.ibb.co/ynN7qxLH/IMG20260913160214-1.jpg", desc: "4. เดินผ่านบริเวณหอพักหญิง" },
+          { url: "https://i.ibb.co/VccZRVgk/IMG20260913160344-1.jpg", desc: "5. ถึงหอสมุดเฉลิมพระเกีรติกาญจนาภิเสก จุดหมายอยู่บริเวณด้านหน้า" }
         ]
       }
     ];
