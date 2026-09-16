@@ -427,9 +427,8 @@
 
   <div class="container">
     <header class="glass-card">
-      <h1>📍 ค้นหาและนำทางห้องเรียน PCSHSCR</h1>
+      <h1>📍 ค้นหาและนำทางสถานที่ใน PCSHSCR</h1>
       <p>พิมพ์เลขห้อง หรือเลือกห้องด้านล่างเพื่อดูรายละเอียดและเส้นทางเดินไปห้อง</p>
-      <p>CHIANG RAI District</p>
       <span class="credit-badge">Made by PCSHSCR student M.4/3</span>
     </header>
 
